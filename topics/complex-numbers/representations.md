@@ -517,6 +517,8 @@ Points to notice:
 
 ## Where this leads
 
+Complex numbers opened up much of 19th-century mathematics, from abstract algebra and vector analysis to topology and the study of primes. The companion note [What complex numbers led to](legacy.md) tells that story. Directions most relevant to engineering:
+
 - **Quaternions** (Hamilton 1843): four dimensions, non-commutative, and the standard tool for 3D rotations.
 - **Fourier analysis**: $e^{i\omega t}$ as a basis, and the DFT as evaluation at roots of unity.
 - **Finite fields**: the quotient construction applied to $\mathbb{F}_2$, behind error-correcting codes and cryptography.
