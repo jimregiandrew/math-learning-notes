@@ -229,9 +229,28 @@ $$(a, b) = (a, 0) + (b, 0)(0, 1) = a + bi.$$
 
 So $a + bi$ is just a convenient way of writing the pair $(a, b)$. The square root of $-1$ is no longer assumed. It's *constructed*.
 
+The quarter turn from [Section 2](#key-insight-multiplying-by-i-is-a-quarter-turn) also falls straight out of the multiplication rule:
+
+$$(0, 1)(a, b) = (0 \cdot a - 1 \cdot b,\ 0 \cdot b + 1 \cdot a) = (-b,\ a),$$
+
+which is the arrow $(a, b)$ turned $90°$ counterclockwise. Nothing geometric went into the definition, yet multiplying by $i$ rotates.
+
 ### Where does the strange multiplication come from?
 
 It wasn't pulled out of a hat. It's exactly the result of multiplying out $(a + bi)(c + di)$ with $i^2 = -1$. Hamilton reverse-engineered his definition from Representation 1. That's worth saying plainly: the pair definition looks unmotivated precisely *because* its motivation is in the other representations. This is often true of "rigorous" definitions in textbooks. They are the end of a story, presented as if they were the beginning.
+
+### Foundation versus intuition
+
+There is an irony here. Hamilton set out to free complex numbers from geometry, and the definition he chose, pairs $(a, b)$, looks like nothing so much as points in the plane.
+
+The irony goes away once you separate two questions:
+
+- **What justifies the definition?** An ordered pair is just two real numbers in a fixed order. The rules above use only real arithmetic, with no distance, angle or direction anywhere. So if you trust the reals, you must trust the complex numbers. That is the *foundation*.
+- **How do you understand it?** By the picture. Descartes had identified pairs of reals with points in the plane two centuries earlier, so it's hard to see $(a, b)$ and not see a point. And the multiplication rule turns out to be exactly rotate-and-scale. That is the *intuition*.
+
+Hamilton wasn't banning the picture. He was saying that the picture shouldn't be what makes complex numbers legitimate. This has become the standard pattern in modern mathematics: define without geometry, then picture freely. The algebraic foundation and the geometric picture fit together exactly, and that's no accident. Both describe the same structure.
+
+There is a further twist. Hamilton reduced complex numbers to real numbers, but what did *real* numbers rest on? For Hamilton, our sense of time. A rigorous answer came only in 1872. So he didn't fully solve the foundational problem. He moved it from "what is $\sqrt{-1}$?" to "what is a real number?" That is real progress: a smaller, more basic question. The [appendix](#appendix-algebra-as-the-science-of-pure-time) tells this part of the story.
 
 ### Legacy
 
@@ -287,9 +306,9 @@ A natural question is whether the rotation matrices are isomorphic to $\mathbb{C
 
 **Rotation matrices alone** correspond to the **unit circle**, the complex numbers with $\lvert z\rvert = 1$. The product of two rotations is a rotation, and every rotation has an inverse, so they form a *group* under multiplication. (This group is called $SO(2)$, and it matches the unit circle $S^1$ in $\mathbb{C}$.) But they don't form a field. The sum of two rotations isn't a rotation: for example $I + I = 2I$ stretches lengths by 2. And there is no zero.
 
-**Adding scaling gives all of $\mathbb{C}$.** Every matrix $aI + bJ$ can be written as $r\,R_\theta$, a scalar $r = \lvert z\rvert \ge 0$ times a rotation. This is polar form in matrix language. Multiplying by the scalar $r$ is the same as multiplying by the matrix $rI$, which represents the real number $r$. It commutes with everything, so scaling and rotating don't interfere with each other. Negative scalings aren't needed, because $-R_\theta = R_{\theta + \pi}$.
+**Adding scaling (of rotation matrices) gives all of $\mathbb{C}$.** Every matrix $aI + bJ$ can be written as $r\,R_\theta$, a scalar $r = \lvert z\rvert \ge 0$ times a rotation. This is polar form in matrix language. Multiplying by the scalar $r$ is the same as multiplying by the matrix $rI$, which represents the real number $r$. It commutes with everything, so scaling and rotating don't interfere with each other. Negative scalings aren't needed, because $-R_\theta = R_{\theta + \pi}$.
 
-What scaling adds is **addition** (and a zero). Adding matrices is always possible; the question is whether the sum stays in the set. The sum of two scaled rotations is again a scaled rotation, because $(a_1 I + b_1 J) + (a_2 I + b_2 J) = (a_1 + a_2)I + (b_1 + b_2)J$.
+What scaling adds is closure under **addition** (and a zero). Adding matrices is always possible; the question is whether the sum stays in the set. The sum of two scaled rotations is again a scaled rotation, because $(a_1 I + b_1 J) + (a_2 I + b_2 J) = (a_1 + a_2)I + (b_1 + b_2)J$.
 
 **Why rotations alone aren't closed, geometrically.** A matrix $aI + bJ$ is completely determined by where it sends $(1, 0)$, namely its first column $(a, b)$. (The second column is that arrow turned $90°$.) So scaled rotations correspond to *arrows of any length*, and pure rotations to *arrows of length exactly 1*. Two arrows always add to an arrow. Two unit arrows usually don't add to a unit arrow. For example, $R_0 + R_{90°}$ sends $(1,0)$ to $(1,0) + (0,1) = (1,1)$:
 
@@ -509,3 +528,60 @@ Points to notice:
 - Barry Mazur, *Imagining Numbers* (2003). An extended meditation on Bombelli's leap.
 - Tristan Needham, *Visual Complex Analysis* (1997). The geometric viewpoint, done beautifully.
 - John Stillwell, *Mathematics and Its History*. Chapters on the cubic, complex numbers and quaternions.
+
+---
+
+## Appendix: algebra as the science of pure time
+
+Hamilton's 1837 paper on couples opens with a long essay titled "Algebra as the Science of Pure Time". It explains what Hamilton thought the real numbers, and so his couples, actually rest on. The answer seems odd today, but it makes sense once you see the problem he faced.
+
+### The problem: algebra about nothing?
+
+In the 1830s it wasn't only $\sqrt{-1}$ that was in doubt. Some British mathematicians still rejected *negative* numbers. How can you take 5 from 3? Others, led by George Peacock, answered the doubts by treating algebra as a formal game. You fix rules for manipulating symbols, and the symbols needn't mean anything. Hamilton disliked both positions. He wanted algebra to be a *science* with genuine subject matter, the way geometry is the science of space.
+
+### The source: Kant
+
+Hamilton took his answer from the philosopher Immanuel Kant. Kant argued that some knowledge comes neither from logic alone nor from experience. It rests on two built-in forms of intuition, **space** and **time**, which structure all experience:
+
+- **Geometry** rests on our intuition of space. That's why we can be certain of geometric truths without measuring anything.
+- **Arithmetic** rests on our intuition of time, because counting is succession: one, then the next, then the next.
+
+Hamilton's conclusion: if geometry is the science of space, then algebra is the science of pure time.
+
+### Building numbers from time
+
+- A **moment** is a point in time.
+- A **step** is the transition from one moment to another.
+- **Numbers are ratios of steps.** "3" means a step three times as long as a given step.
+- **Negative numbers** are steps backwards in time. Reversing a step is no more mysterious than reversing direction, so the old objection disappears.
+- **Irrational numbers** come from the *continuity* of time. Any two steps have a ratio, even if no fraction expresses it exactly.
+
+Couples, his complex numbers, were pairs of moments or pairs of steps. So in Hamilton's own mind $(a, b)$ was *not* a point in the plane. The geometric reading of his construction is ours, not his.
+
+### Why this isn't rigorous
+
+The property of the real numbers that matters most for analysis is that they have **no gaps** (*completeness*). Every bounded increasing sequence converges, and every cut through the number line falls at a number. Hamilton got this property by appealing to the felt continuity of time. That's an intuition, not a proof, and intuitions about continuity had already misled people. Before Weierstrass, for example, it was widely believed that a continuous function must be differentiable at most points.
+
+In 1872 Richard Dedekind built the reals from the rationals alone. He defined each real number as a **cut**: a split of the rationals into a lower set and an upper set. ($\sqrt{2}$ is the cut whose lower set is every rational $q$ with $q < 0$ or $q^2 < 2$.) In the same year Georg Cantor gave an equivalent construction using Cauchy sequences. Either way, completeness becomes a theorem, and no appeal to time or space is needed. (Some historians see a partial anticipation of Dedekind's cuts in Hamilton's essay, but the details are debated.)
+
+The full chain of justification became
+
+$$\mathbb{C} \xrightarrow{\text{Hamilton 1833}} \mathbb{R} \xrightarrow{\text{Dedekind, Cantor 1872}} \mathbb{Q} \to \mathbb{Z} \to \mathbb{N} \to \text{set theory}.$$
+
+Hamilton's step was rigorous. The next one, from $\mathbb{R}$ to $\mathbb{Q}$, took 35 more years.
+
+### What became of Kant's view
+
+The view that geometry rests on a built-in intuition of space was badly shaken in the same century. Non-Euclidean geometries (Lobachevsky 1829, Bolyai 1832, Riemann 1854) are perfectly consistent. Later, general relativity suggested that physical space isn't Euclidean at all. If intuition can't even settle which geometry is true, it is a shaky foundation for algebra. That's one reason mathematics moved towards the modern approach: build everything from sets and logic, and treat space and time as sources of intuition rather than of justification. That is exactly the split described in [Foundation versus intuition](#foundation-versus-intuition).
+
+Hamilton's time-based foundation didn't survive. But it did what he needed in 1833. It gave him a reason to believe that pairs of reals were *about* something, and that belief carried him on to the quaternions.
+
+### An aside: do the laws of algebra come from space?
+
+A thought I keep coming back to: some algebraic laws look like facts about the space we live in. Rearranging the order of additions or multiplications doesn't change the result, because rearranging physical things doesn't change them.
+
+Euclid would have agreed. Proposition 1 of Book II of the *Elements* is essentially the distributive law, stated about areas. A rectangle of height $a$ on a base of length $b + c$ splits into two rectangles, $ab$ and $ac$. Commutativity of multiplication is the same rectangle turned on its side. Commutativity of addition is laying two lengths end to end in either order.
+
+The twist comes from Hamilton himself. Space also gives us operations that *don't* commute. Rotate a book $90°$ about one axis and then about another, then do the same two rotations in the opposite order: the book ends up in different positions. That is why quaternions, which describe 3D rotations, had to give up $ab = ba$. So space doesn't hand us "the" laws of algebra. Each operation has its own laws: lengths and areas commute, but 3D rotations don't.
+
+Mathematicians prefer to strip a structure down to its essential axioms. I can see the power of that, because the bare axioms suggest extensions that a picture would hide; non-Euclidean geometry is the classic example. But the world we live in and its practical problems are a huge driver of mathematics too. Understanding the simple parts of the real world well (lengths, areas, rotations) is often what lets us understand the more complex parts. The two approaches complement each other. Intuition about the world suggests the laws, and abstraction tells us which laws we actually used and what happens if we change them.
