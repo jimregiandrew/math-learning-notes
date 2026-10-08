@@ -32,7 +32,7 @@ resources/   Books, papers, courses, and links worth returning to
 ## Conventions
 
 - Notes are Markdown with LaTeX math: `$...$` inline, `$$...$$` for display. Both render on GitHub and in VS Code.
-- Code is Python, usually with NumPy, SciPy, and Matplotlib. Its job is to make an idea concrete or check it numerically, not to be production software.
+- Code is Python, usually with NumPy, SciPy, and Matplotlib. Its job is to make an idea concrete or check it numerically, not to be production software. Dependencies are managed with [uv](https://docs.astral.sh/uv/): run any script with `uv run python path/to/script.py`, which sets up the environment on first use.
 
 ## Topics
 

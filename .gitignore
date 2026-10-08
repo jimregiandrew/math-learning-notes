@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+
+# PDF renders of notes
+topics/**/*.pdf
+scratch/**/*.pdf

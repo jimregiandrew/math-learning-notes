@@ -21,6 +21,7 @@ The main output is **notes he will read and re-read as reminders**. Write for th
 - **Keep it simple (KISS, Occam's razor).** Use the simplest example, notation, and code that shows the idea. Don't add generality, edge cases, or abstraction until they earn their place.
 - **Bridge the full range.** Where it fits, connect pure math → engineering tool → Python output. Jim wants to see the whole chain. For example: inner product spaces → orthogonal bases → Fourier series → an FFT of a real signal.
 - **Go deeper when it clarifies.** Pull in pure math (algebraic structure, analysis, linear algebra done abstractly) when it explains *why* a tool works or *when* it fails. Say why the detour is worth it.
+- **Use history that sheds light.** Jim finds that the history of a concept often makes it click. Where it helps understanding, cover what problem people were stuck on, the false starts and resistance, and how the idea was actually arrived at, so an abstract concept doesn't seem to come from nowhere. Keep history in service of the concept, not trivia. Where relevant, say whether the idea is better seen as a discovery or an invention, and why.
 - **Be honest about rigor.** Mark clearly whether something is a full proof, a sketch, or a heuristic. Note the hypotheses that matter in practice (convergence, smoothness, invertibility, and so on).
 
 ## Repository layout
@@ -34,6 +35,6 @@ Before creating a new topic folder, check whether an existing one fits. Link rel
 ## Conventions
 
 - **Math:** LaTeX in Markdown, with `$...$` inline and `$$...$$` for display. Keep it GitHub-renderable: avoid custom macros and exotic packages.
-- **Code:** Python, mainly NumPy, SciPy, and Matplotlib. Keep scripts short and readable, aimed at showing or checking an idea rather than production quality. Use descriptive variable names that match the math notation in the notes where possible. Each script should run on its own.
+- **Code:** Python, mainly NumPy, SciPy, and Matplotlib. Keep scripts short and readable, aimed at showing or checking an idea rather than production quality. Use descriptive variable names that match the math notation in the notes where possible. Each script should run on its own. Dependencies live in the root `pyproject.toml`, managed with uv: run scripts with `uv run python path/to/script.py`, and add packages with `uv add <package>`.
 - **Notes should stand alone.** A reader opening one note should be able to follow it, with links to prerequisites where needed.
 - **Audience is public.** Notes may be read by others, so keep them clean and avoid in-jokes. Jim's own voice and confusions are welcome.
