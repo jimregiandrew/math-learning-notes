@@ -4,3 +4,6 @@ __pycache__/
 # PDF renders of notes
 topics/**/*.pdf
 scratch/**/*.pdf
+
+# Copyrighted source texts (kept locally, not published)
+texts/
