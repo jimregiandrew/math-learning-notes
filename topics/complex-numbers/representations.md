@@ -355,6 +355,8 @@ $$(a + bx)(c + dx) = ac + (ad + bc)x + bd\,x^2 \equiv (ac - bd) + (ad + bc)x, \q
 
 That's the complex multiplication rule with $x$ in place of $i$. It's the same move as clock arithmetic. "Integers mod 12" treats 12 as zero. Here we work with "polynomials mod $x^2 + 1$".
 
+If this construction feels abstract, [Dual numbers, Section 3](../automatic-differentiation/dual-numbers.md#3-what-polynomials-modulo-x2-means) builds it step by step, starting from the simpler case "mod $x^2$" (which just drops $x^2$ and higher powers). It also proves why reducing can never lead to a contradiction.
+
 ### Formal version
 
 Write $(x^2 + 1)$ for the set of all polynomial multiples of $x^2 + 1$. (In ring theory this is called an *ideal*.) The **quotient ring** $\mathbb{R}[x]/(x^2 + 1)$ treats two polynomials as equal when their difference is a multiple of $x^2 + 1$. It's automatically a ring, because quotients of rings by ideals always are.
